@@ -5,7 +5,7 @@ import * as S from "./styled";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function Slider({ info }) {
+export default function Slider() {
 
     return (
         <S.SliderStyled>

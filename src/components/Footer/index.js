@@ -4,7 +4,7 @@ import { Toolbar } from '@mui/material';
 
 const footer = () => {
     return (
-        <Toolbar sx={{ height: "276px", background: "#262626", display: "flex", justifyContent: "center", flexDirection: "column", marginTop: "128px" }}>
+        <Toolbar sx={{ height: "276px", background: "#262626", display: "flex", justifyContent: "center", flexDirection: "column" }}>
             <S.FieldTop>
                 <S.Yuzu src='./yuzu.png' />
                 <S.Paragraph>Ainda está procurando algo pra assistir?</S.Paragraph>

@@ -1,36 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Toolbar, Grid, Typography } from '@mui/material';
 import * as S from "./styled";
-import axios from "axios";
+import { Toolbar, Typography } from '@mui/material';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import TemporaryDrawer from "../components/Drawer"
 import CustomizedInputBase from "../components/Search"
 import Head from "../components/Head"
-import Cards from "../components/Cards"
 import Swiper from "../components/Swiper"
 import Footer from '../components/Footer';
+import CardList from '../components/CardList';
 
 export default function Home() {
-
-  const [response, setResponse] = useState();
-
-  const baseURL = `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0`
-
-  useEffect(() => {
-    axios
-      .get(
-        baseURL
-      )
-      .then((response) => {
-        setResponse(response?.data?.data);
-      })
-      .catch(function (error) {
-        console.log(error.toJSON());
-      });
-  }, [baseURL]);
-
-
-  console.log(response, "response in Api");
-
 
   return (
 
@@ -43,17 +22,17 @@ export default function Home() {
           <TemporaryDrawer />
         </S.Drawer>
 
-        <S.Application>
+        <S.Application style={{ marginBottom: "120px" }}>
 
-          <Toolbar sx={{ height: "456px", backgroundImage: "url('/banner.png')", backgroundSize: "cover", display: "flex", justifyContent: "center" }}>
+          <Toolbar sx={{ height: "456px", backgroundImage: "url('/banner.png')", backgroundSize: "cover" }}>
             <S.ContainerToolbar >
 
               <S.Soon item>
-                <S.FprSoon src="/logo.png" alt="Logo" />
+                <S.FprSoon src="./logo.png" alt="Logo" />
               </S.Soon>
 
               <S.Title>
-                <Typography variant="h2">O Maior Catálogo de<br /> Anime do Mundo</Typography>
+                <Typography variant="h2">O <S.ColorOrange>Maior</S.ColorOrange> Catálogo de<br /><S.ColorGreen>Anime</S.ColorGreen> do Mundo</Typography>
               </S.Title>
 
               <S.Search>
@@ -64,27 +43,13 @@ export default function Home() {
           </Toolbar>
 
           <S.Card>
-
-            {response && response.map((item, index) => {
-              return (
-                <Grid key={index}>
-                  <Cards info={item} />
-                </Grid>
-              )
-            })}
+            <CardList title="Animes" subtitle="Mais populares" icon={<StarBorderIcon />} sort="user_count" />
           </S.Card>
 
-          <Swiper info={response} />
+          <Swiper />
 
           <S.Card>
-
-            {response && response.map((item, index) => {
-              return (
-                <Grid key={index}>
-                  <Cards info={item} />
-                </Grid>
-              )
-            })}
+            <CardList title="Animes" subtitle="Mais bem classificados" icon={<ThumbUpOffAltIcon />} sort="average_rating" />
           </S.Card>
         </S.Application>
 

@@ -2,9 +2,11 @@ import styled from "styled-components"
 
 export const SliderStyled = styled.div`
 margin-top: 82px;
+cursor: pointer;
 .swiper {
   width: 1200px;
   height: 100%;
+  
 }
 .swiper-slide {
   text-align: center;

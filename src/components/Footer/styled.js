@@ -4,6 +4,7 @@ export const FieldTop = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-bottom: 100px;
 `
 export const Yuzu = styled.img`
 width: 249px;
@@ -11,13 +12,13 @@ height: 94px;
 `
 export const Paragraph = styled.p`
 font-family:"inter";
-color: white;
+color: var(--color-white);
 font-size: 16px;
 font-weight: bold;
 `
 export const Paragraph1 = styled.p`
 font-family:"inter";
-color: green;
+color: var(--color-green);
 font-size: 16px;
 font-weight: bold;
 `
@@ -26,7 +27,7 @@ width: 140px;
 height: 39px;
 background: transparent;
 border: 3px solid #F46D1B;
-color: #F46D1B;
+color: var(--color-orange);
 font-size: 16px;
 font-weight: bold;
 margin-top: 10px;
@@ -35,9 +36,10 @@ export const FieldFooter = styled.div`
 width: 100%;
 display: flex;
 justify-content: space-between;
+margin-bottom: 50px;
 `
 export const Copy = styled.div`
-color: white;
+color: var(--color-white);
 `
 export const Icon = styled.img`
 width: 12px;
