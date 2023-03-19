@@ -20,9 +20,6 @@ export default function TemporaryDrawer() {
 
     if (dataCategories) setCategories(dataCategories);
   }, [])
-
-  console.log(categories, "aquiuii");
-
   const [state, setState] = React.useState({
     left: false,
   });
@@ -61,7 +58,7 @@ export default function TemporaryDrawer() {
       </List>
     </Box>
   );
-  
+
   return (
     <div >
       {[''].map((anchor) => (

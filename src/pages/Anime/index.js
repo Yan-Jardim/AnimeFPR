@@ -7,7 +7,7 @@ import TemporaryDrawer from "../../components/Drawer"
 const anime = () => {
 
 
-    const [answer, setAnswer] = useState();
+    const [response, setResponse] = useState();
 
     let url;
     let characterId;
@@ -17,16 +17,20 @@ const anime = () => {
         characterId = url.split("id=")[1];
     }
 
-    const selectAnime = () => {
+    const AnimeId = () => {
         axios
-            .get(
-                `https://kitsu.io/api/edge/anime/${characterId}`
-            )
-            .then((response) => {
-                setAnswer(response?.data?.data);
-            });
-    }
- 
+          .get(`https://kitsu.io/api/edge/anime/${characterId}`)
+          .then((res) => {
+            setResponse(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      
+    console.log(response, "w");
+
+
     return (
         <>
             <S.Container>
@@ -38,6 +42,7 @@ const anime = () => {
                 <S.Application>
                     <Banner />
 
+                    {response?.id}
                 </S.Application>
 
             </S.Container>

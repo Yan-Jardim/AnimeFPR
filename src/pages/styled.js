@@ -25,6 +25,7 @@ margin-top: 30px;
 export const FprSoon = styled.img`
 width: 192px;
 height: 118px;
+
 `
 export const Title = styled.div`
 display: flex;
