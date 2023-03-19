@@ -24,14 +24,14 @@ const CardList = (props) => {
         axios
             .get(url)
             .then((response) => {
-                setResponse(response);
+                setResponse(response?.data?.data);
             })
             .catch(function (error) {
                 console.log(error.toJSON());
             });
     }, [url]);
 
-    console.log(response,"aqui é a resposta dos cards");
+    console.log(response, "aqui é a resposta dos cards");
 
 
     return (
@@ -46,7 +46,7 @@ const CardList = (props) => {
                 </S.Subtitle>
             </S.Paragraph>
             <div style={{ display: "flex", gap: "10px" }}>
-                {response && response.map((item) => {
+                {response && Object.values(response)?.map((item) => {
                     return (
                         <Cards info={item} />
                     )

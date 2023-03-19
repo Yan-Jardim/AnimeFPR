@@ -6,7 +6,6 @@ import TemporaryDrawer from "../../components/Drawer"
 
 const anime = () => {
 
-
     const [response, setResponse] = useState();
 
     let url;
@@ -17,19 +16,19 @@ const anime = () => {
         characterId = url.split("id=")[1];
     }
 
-    const AnimeId = () => {
+    useEffect(() => {
         axios
-          .get(`https://kitsu.io/api/edge/anime/${characterId}`)
-          .then((res) => {
-            setResponse(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
-      
-    console.log(response, "w");
+            .get(`https://kitsu.io/api/edge/anime/${characterId}`)
+            .then((res) => {
+                setResponse(res?.data?.data);
+                console.log(res, 'ress');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [])
 
+    console.log(response, "w");
 
     return (
         <>
@@ -41,8 +40,9 @@ const anime = () => {
 
                 <S.Application>
                     <Banner />
+                    <p>{response?.id}</p>
+                    <img src={response?.attributes?.posterImage?.original} alt='img' />
 
-                    {response?.id}
                 </S.Application>
 
             </S.Container>
