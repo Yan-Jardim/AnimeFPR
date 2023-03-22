@@ -31,6 +31,7 @@ color: var(--color-orange);
 font-size: 16px;
 font-weight: bold;
 margin-top: 10px;
+cursor: pointer;
 `
 export const FieldFooter = styled.div`
 width: 100%;

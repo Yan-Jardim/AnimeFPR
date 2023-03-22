@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import * as S from "./styled";
+import axios from "axios";
 import Head from "../../components/Head"
-import Banner from '../../components/Banner'
-import TemporaryDrawer from "../../components/Drawer"
-import Footer from "../../components/Footer"
+import Modal from '../../components/Modal';
+import Banner from '../../components/Banner';
+import Footer from "../../components/Footer";
+import StarIcon from '@mui/icons-material/Star';
+import TemporaryDrawer from "../../components/Drawer";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import StarIcon from '@mui/icons-material/Star';
-import Modal from '../../components/Modal';
 
 const anime = () => {
 
@@ -25,7 +26,17 @@ const anime = () => {
         characterId = url.split("id=")[1];
     }
 
-
+    useEffect(() => {
+        axios
+            .get(`https://kitsu.io/api/edge/anime/${characterId}`)
+            .then((res) => {
+                setResponse(res?.data?.data);
+                console.log(res, 'ress');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [])
 
     console.log(response, "w");
 

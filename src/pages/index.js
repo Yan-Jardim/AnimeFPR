@@ -43,13 +43,13 @@ export default function Home() {
           </Toolbar>
 
           <S.Card>
-            <CardList title="Animes" subtitle="Mais populares" icon={<StarBorderIcon />} sort="user_count" />
+            <CardList title="Animes" subtitle="Mais populares" icon={<StarBorderIcon sx={{ verticalAlign: 'middle' }} />} sort="user_count" />
           </S.Card>
 
           <Swiper />
 
           <S.Card>
-            <CardList title="Animes" subtitle="Mais bem classificados" icon={<ThumbUpOffAltIcon />} sort="average_rating" />
+            <CardList title="Animes" subtitle="Mais bem classificados" icon={<ThumbUpOffAltIcon sx={{ verticalAlign: 'middle'}} />} sort="average_rating" />
           </S.Card>
         </S.Application>
 
