@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import * as S from "./styled";
 import axios from "axios";
 import Cards from "../../components/Cards"
-
+import { Grid } from "@mui/material";
 
 const CardList = (props) => {
-    const { title, subtitle, icon, sort } = props;
+    const { title, subtitle, icon, sort, categoryName, limit } = props;
 
     const [response, setResponse] = useState();
 
-
-    let url = `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0`;
+    let url = `https://kitsu.io/api/edge/anime?page[limit]=${limit ?? 5}&page[offset]=0`;
 
     if (sort === "user_count") {
         url += "&sort=-user_count";
@@ -18,6 +17,10 @@ const CardList = (props) => {
 
     if (sort === "average_rating") {
         url += "&sort=-average_rating";
+    }
+
+    if (categoryName && categoryName !== "All") {
+        url += `&filter[categories]=${categoryName}`
     }
 
     useEffect(() => {
@@ -29,7 +32,7 @@ const CardList = (props) => {
             .catch(function (error) {
                 console.log(error.toJSON());
             });
-    }, [url]);
+    }, []);
 
     console.log(response, "aqui é a resposta dos cards");
 
@@ -45,13 +48,15 @@ const CardList = (props) => {
                     {subtitle}
                 </S.Subtitle>
             </S.Paragraph>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <Grid container>
                 {response && Object.values(response)?.map((item) => {
                     return (
-                        <Cards info={item} />
+                        <Grid item xs={3}>
+                            <Cards info={item} />
+                        </Grid>
                     )
-                })}
-            </div>
+                })} 
+            </Grid>
         </S.List>
     )
 }

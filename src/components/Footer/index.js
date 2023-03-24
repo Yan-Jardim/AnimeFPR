@@ -10,7 +10,7 @@ const footer = () => {
                 <S.Yuzu src='./yuzu.png' />
                 <S.Paragraph>Ainda está procurando algo pra assistir?</S.Paragraph>
                 <S.Paragraph1> Confira o nosso acervo completo</S.Paragraph1>
-                <S.Btn onClick={() => { router.push(`/Categories`) }} >VER TUDO</S.Btn>
+                <S.Btn onClick={() => { router.push(`/Categories?category=All`) }} >VER TUDO</S.Btn>
             </S.FieldTop>
             <S.FieldFooter>
                 <S.Copy>© 2023 FPR Animes - Todos os direitos reservados.</S.Copy>

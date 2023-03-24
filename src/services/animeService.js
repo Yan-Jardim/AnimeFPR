@@ -9,4 +9,4 @@ const getAnimes = () => {
     .catch(function (error) {
       console.log(error.toJSON());
     });
-}
+}s

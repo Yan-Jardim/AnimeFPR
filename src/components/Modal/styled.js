@@ -25,7 +25,7 @@ display: flex;
 margin: 10px 10px 20px 0px;
 align-items: center;
 justify-content: center;
-background-color: #A6955A; 
+background-color: red; 
 border-radius: 50px;
 width: 25px;
 height: 25px;

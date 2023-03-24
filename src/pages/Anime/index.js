@@ -31,14 +31,11 @@ const anime = () => {
             .get(`https://kitsu.io/api/edge/anime/${characterId}`)
             .then((res) => {
                 setResponse(res?.data?.data);
-                console.log(res, 'ress');
             })
             .catch((error) => {
                 console.log(error);
             });
     }, [])
-
-    console.log(response, "w");
 
 
     const handleOpenModal = (currentTrailer) => {

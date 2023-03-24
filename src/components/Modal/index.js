@@ -3,14 +3,17 @@ import * as S from "./styled"
 
 export default function Modal(item) {
 
-    console.log(item, "resposta");
-
     return (
         <S.Container >
             <S.Content>
                 <S.Fechar onClick={item.handleClose}>X</S.Fechar>
 
-                {item?.CurrentTrailer?.attributes?.youtubeVideoId}
+                <iframe width="560" height="315" src={`https://www.youtube.com/embed/${item?.CurrentTrailer?.attributes?.youtubeVideoId}`}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </S.Content>
         </S.Container>
     )

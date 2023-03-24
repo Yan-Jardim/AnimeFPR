@@ -23,7 +23,6 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-
   const items = [
     { idGames: 1, textGames: 'Games of the Week', },
 
@@ -49,7 +48,7 @@ export default function TemporaryDrawer() {
           <ListItemButton sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
             <ListItemText />
             {categories?.map(category => (
-              <a key={category.id} href={`#${category.id}`}>
+              <a key={category.id} href={`/Categories?category=${category?.attributes?.title}`}>
                 <div>{category.attributes.title}</div>
               </a>
             ))}

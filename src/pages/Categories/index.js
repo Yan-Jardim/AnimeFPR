@@ -4,8 +4,16 @@ import Head from "../../components/Head"
 import Banner from '../../components/Banner'
 import TemporaryDrawer from "../../components/Drawer"
 import Footer from "../../components/Footer"
+import CardList from "../../components/CardList"
+import { useRouter } from "next/router"
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
 const categories = () => {
+
+    const router = useRouter()
+
+    const { category } = router.query;
+
     return (
         <>
             <Head />
@@ -18,7 +26,14 @@ const categories = () => {
                 <S.Application>
                     <Banner />
                     <S.Content>
-
+                        {category &&
+                            <CardList
+                                icon={<LocalMoviesIcon />}
+                                title={category}
+                                categoryName={category}
+                                limit={20}
+                            />
+                        }
                     </S.Content>
                 </S.Application>
 

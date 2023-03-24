@@ -18,15 +18,15 @@ export default function Slider() {
                 className="mySwiper">
 
                 <SwiperSlide>
-                    <S.Img src="./slider1.png" />
+                    <S.Img src="./sliderN.png" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <S.Img src="./slider2.png" />
+                    <S.Img src="./sliderO.png" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <S.Img src="./slider3.png" />
+                    <S.Img src="./sliderD.png" />
                 </SwiperSlide>
             </Swiper>
         </S.SliderStyled>
