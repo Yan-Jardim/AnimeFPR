@@ -9,6 +9,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import ListIcon from '@mui/icons-material/List';
 import { getCategories } from '../../services/categories';
 
 export default function TemporaryDrawer() {
@@ -16,7 +17,7 @@ export default function TemporaryDrawer() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => async () => {
-    const dataCategories = await getCategories(10);
+    const dataCategories = await getCategories(40);
 
     if (dataCategories) setCategories(dataCategories);
   }, [])
@@ -38,7 +39,7 @@ export default function TemporaryDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, marginTop: "10px" }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, background: "#F46D1B" }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -46,16 +47,24 @@ export default function TemporaryDrawer() {
       <List>
         <ListItem disablePadding>
           <ListItemButton sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
+            <S.ContentTitle>
+              <ListIcon sx={{ fontSize: "30px" }} />
+              <S.Title>Categorias</S.Title>
+            </S.ContentTitle>
             <ListItemText />
             {categories?.map(category => (
-              <a key={category.id} href={`/Categories?category=${category?.attributes?.title}`}>
-                <div>{category.attributes.title}</div>
-              </a>
+              <Button
+                variant="text"
+                key={category.id}
+                href={`/Categories?category=${category?.attributes?.title}`}
+                sx={{ color: '#ffffff', height: "30px" }}>
+                {category.attributes.title}
+              </Button>
             ))}
           </ListItemButton>
         </ListItem>
       </List>
-    </Box>
+    </Box >
   );
 
   return (

@@ -4,16 +4,14 @@ import * as S from "./styled"
 export default function Modal(item) {
 
     return (
-        <S.Container >
+        <S.Container onClick={item.handleClose} >
             <S.Content>
-                <S.Fechar onClick={item.handleClose}>X</S.Fechar>
-
-                <iframe width="560" height="315" src={`https://www.youtube.com/embed/${item?.CurrentTrailer?.attributes?.youtubeVideoId}`}
+                <S.Trailer src={`https://www.youtube.com/embed/${item?.CurrentTrailer?.attributes?.youtubeVideoId}`}
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
-                </iframe>
+                </S.Trailer>
             </S.Content>
         </S.Container>
     )

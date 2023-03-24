@@ -22,4 +22,5 @@ height: 408px;
 `
 export const Content = styled.div`
 display: flex;
+justify-content: center;
 `

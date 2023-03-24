@@ -1,7 +1,9 @@
 import styled from "styled-components"
 
-export const List = styled.div`
+export const ContentTitle = styled.div`
 display: flex;
-flex-direction: column;
-background-color: red;
+color: var(--color-white);
+`
+export const Title = styled.h2`
+margin-left: 10px;
 `

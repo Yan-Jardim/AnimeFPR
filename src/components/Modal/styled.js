@@ -14,23 +14,12 @@ z-index: 9999;
 `
 export const Content = styled.div`
 display: flex;
-width: 704px;
-height: 453px;
-background: #171717;
+width: 904px;
+height: 509px;
 flex-direction: column;
-border-radius: 10px;
 `
-export const Fechar = styled.div`
-display: flex;
-margin: 10px 10px 20px 0px;
-align-items: center;
-justify-content: center;
-background-color: red; 
-border-radius: 50px;
-width: 25px;
-height: 25px;
-color: #031C29;
-cursor: pointer;
-font-weight: 900;
+export const Trailer = styled.iframe`
+width: 100%;
+height: 509px;
+border: none;
 `
-

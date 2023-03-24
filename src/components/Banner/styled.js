@@ -10,4 +10,5 @@ export const FprSoon = styled.img`
 width: 121px;
 height: 75px;
 cursor: pointer;
+margin-left: 40px;
 `
