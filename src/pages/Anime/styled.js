@@ -34,6 +34,9 @@ margin-top: 150px;
 export const ContentCard = styled.div`
 margin-left: 83px;
 width: 250px;
+@media screen and (min-width: 360px) and (max-width: 560px) {
+    margin-left: 23px;
+}
 `
 export const Card = styled.img`
 width: 221px ;
@@ -67,15 +70,10 @@ export const ContentText = styled.div`
 margin: 13px 0 0 29px;
 `
 export const Title = styled.h1`
-@media screen and (min-width: 360px) and (max-width: 560px) {
-margin-left: 50px;
-}
+margin-bottom: 10px;
+
 `
 export const Text = styled.p`
-margin-top: 20px;
-width: 700px;
-@media screen and (min-width: 360px) and (max-width: 560px) {
-width: 280px;
-margin-left: 50px;
-}
+margin-right: 20px;
+font-size: clamp(1.75em, 1em + 3vw, 2,5em);
 `

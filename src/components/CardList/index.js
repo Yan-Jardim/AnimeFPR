@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import * as S from "./styled";
 import axios from "axios";
 import Cards from "../../components/Cards"
+import { Grid } from "@mui/material";
 
 const CardList = (props) => {
     const { title, subtitle, icon, sort, categoryName, limit } = props;
@@ -44,13 +45,17 @@ const CardList = (props) => {
                     {subtitle}
                 </S.Subtitle>
             </S.Paragraph>
-            <S.ContentCards>
+
+            <Grid container sx={{ display: "flex", justifyContent: "center", gap: "10px" }}>
                 {response && Object.values(response)?.map((item) => {
                     return (
-                        <Cards info={item} />
+                        <Grid sx={{ display: "flex" }}>
+                            <Cards info={item} />
+                        </Grid>
                     )
                 })}
-            </S.ContentCards>
+            </Grid>
+
         </S.List>
     )
 }

@@ -32,6 +32,9 @@ align-items: center;
 `
 export const Soon = styled.div`
 margin-top: 30px;
+@media screen and (min-width: 360px) and (max-width: 560px)  {
+margin-right: 50px;
+}
 `
 export const FprSoon = styled.img`
 width: 192px;
@@ -45,6 +48,7 @@ color: white;
 export const StyledTypography = styled(Typography)`
 @media screen and (min-width: 360px) and (max-width: 560px)  {
 font-size: 30px;
+margin-right: 55px;
 }
 @media screen and (min-width: 561px) and (max-width: 770px) {
 font-size: 50px;
@@ -61,9 +65,12 @@ color: var(--color-green);
 `
 export const Search = styled.div`
 margin-top: 30px;
+@media screen and (min-width: 360px) and (max-width: 560px)  {
+margin-left: 30px;
+}
 `
 export const Sliper = styled.div`
-@media screen and (min-width: 360px) and (max-width: 767px)  {
+@media screen and (min-width: 360px) and (max-width: 1200px)  {
 display: none;
 }
 `
@@ -75,5 +82,6 @@ cursor: pointer;
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-right: 50px;
 }
 `

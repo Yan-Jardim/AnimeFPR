@@ -14,6 +14,8 @@ z-index: 9999;
 @media screen and (min-width: 360px) and (max-width: 560px)  {
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 `
 export const Content = styled.div`
@@ -21,8 +23,8 @@ display: flex;
 width: 904px;
 height: 509px;
 flex-direction: column;
-@media screen and (min-width: 360px) and (max-width: 560px)  {
- width: 85%;
+@media screen and (min-width: 360px) and (max-width: 910px)  {
+ width: 90%;
  height: 90%;
  overflow: auto;
 }
