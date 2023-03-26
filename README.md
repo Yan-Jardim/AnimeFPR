@@ -66,7 +66,7 @@ cd FPR-Anime
 
 <div align="center">
   <p>Modal</p>
-<img src="./Modal.png" width="700px" />
+<img src="./public/Modal.png" width="700px" />
 </div>
  <br/>
 
