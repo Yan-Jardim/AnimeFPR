@@ -8,7 +8,6 @@ const banner = ({ text, setText }) => {
         window.location.href = "/";
     };
 
-
     return (
         <S.container>
             <S.FprSoon src="/logo.png" alt="Logo" onClick={Back} />

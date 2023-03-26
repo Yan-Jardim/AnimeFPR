@@ -1,4 +1,7 @@
 import * as React from 'react';
+import * as S from "./styled"
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function PaginationComponent({
     total,
@@ -21,15 +24,15 @@ export default function PaginationComponent({
         setOffset((page - 1) * LIMIT);
     }
     return (
-        <ul className="pagination">
-            <div>
-                <button
+        <S.List>
+            <S.Prev>
+                <S.BtnPrev
                     onClick={() => onPageChange(current - 1)}
                     disabled={current === 1}
                 >
-                    Anterior
-                </button>
-            </div>
+                    <ArrowBackIosIcon />
+                </S.BtnPrev>
+            </S.Prev>
             {Array.from({ length: Math.min(MAX_ITEMS, pages) })
                 .map((_, index) => index + first)
                 .map((page) => (
@@ -41,15 +44,14 @@ export default function PaginationComponent({
                         </button>
                     </div>
                 ))}
-            <div>
-                { }
-                <button
+            <S.Next>
+                <S.BtnNext
                     onClick={() => onPageChange(current + 1)}
                     disabled={current === pages}
                 >
-                    Próxima
-                </button>
-            </div>
-        </ul>
+                    <ArrowForwardIosIcon />
+                </S.BtnNext>
+            </S.Next>
+        </S.List>
     );
 }

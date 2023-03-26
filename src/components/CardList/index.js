@@ -32,10 +32,6 @@ const CardList = (props) => {
         if (categoryName && categoryName !== "All") {
             url += `&filter[categories]=${categoryName}`;
         }
-
-        // if (text) {
-        //     url += `&filter[text]=${text}`;
-        // }
         return url;
     };
 
@@ -50,8 +46,6 @@ const CardList = (props) => {
                 console.log(error.toJSON());
             });
     }, [sort, categoryName, offset]);
-
-
 
     return (
         <S.List>
@@ -83,7 +77,6 @@ const CardList = (props) => {
                     />
                 }
             </S.Pagination>
-
         </S.List >
     )
 }

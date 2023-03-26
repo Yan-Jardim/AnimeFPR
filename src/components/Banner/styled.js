@@ -5,6 +5,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 background-color: rgba(0, 0, 0, 0.8);
+height: 102px;
 `
 export const FprSoon = styled.img`
 width: 121px;

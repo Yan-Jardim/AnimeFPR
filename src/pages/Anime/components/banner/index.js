@@ -3,7 +3,6 @@ import * as S from "./styled";
 import Search from "../../../../components/Search"
 
 const banner = () => {
-
     const Back = () => {
         window.location.href = "/";
     };

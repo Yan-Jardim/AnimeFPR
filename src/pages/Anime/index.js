@@ -16,8 +16,6 @@ const anime = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentTrailer, setCurrentTrailer] = useState({});
 
-
-
     let url;
     let characterId;
 
@@ -37,7 +35,6 @@ const anime = () => {
             });
     }, [])
 
-
     const handleOpenModal = (currentTrailer) => {
         setCurrentTrailer(currentTrailer);
         setModalIsOpen(true)
@@ -47,11 +44,9 @@ const anime = () => {
         <>
             <Head />
             <S.Container>
-
                 <S.Drawer>
                     <TemporaryDrawer />
                 </S.Drawer>
-
                 <S.Application>
                     <Banner info={response} />
                     <S.BannerImg src={response?.attributes?.coverImage?.large ? response?.attributes?.coverImage?.large : <img src='./bannerDefault.png' />} />
@@ -85,13 +80,9 @@ const anime = () => {
                         <Modal handleClose={() => setModalIsOpen(false)} CurrentTrailer={currentTrailer} />
                     }
                 </S.Application>
-
             </S.Container>
-
             <Footer />
-
         </>
     )
 }
-
 export default anime

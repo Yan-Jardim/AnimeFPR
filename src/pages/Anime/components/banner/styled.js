@@ -7,6 +7,7 @@ align-items: center;
 background-color: rgba(0, 0, 0, 0.8);
 position: absolute;
 width: 95.2%;
+height: 102px;
 @media screen and (min-width: 360px) and (max-width: 560px)  {
 position: unset;
 }
