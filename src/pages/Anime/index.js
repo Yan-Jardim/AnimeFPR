@@ -54,7 +54,7 @@ const anime = () => {
 
                 <S.Application>
                     <Banner info={response} />
-                    <S.BannerImg src={response?.attributes?.coverImage?.large} />
+                    <S.BannerImg src={response?.attributes?.coverImage?.large ? response?.attributes?.coverImage?.large : <img src='./bannerDefault.png' />} />
                     <S.Content>
                         <S.ContentCard>
                             <S.Card src={response?.attributes?.posterImage?.original} />

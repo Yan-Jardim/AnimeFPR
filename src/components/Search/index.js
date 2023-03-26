@@ -1,46 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useState } from 'react';
+import * as M from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { useRouter } from 'next/router';
 
-
-export default function CustomizedInputBase() {
-
-  const [info, setInfo] = useState({});
-  const [text, setText] = useState('');
-  const api = 'https://kitsu.io/api/edge/';
-
-  useEffect(() => {
-    if (text) {
-      setInfo({});
-
-      fetch(
-        `${api}anime?filter[text]=${text}&page[limit]=12`
-      )
-        .then((response) => response.json())
-        .then((response) => {
-          setInfo(response);
-        });
-    }
-  }, [text]);
-
-  console.log();
+const SearchInput = ({ value, onChange, action }) => {
 
   return (
-    <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 230, height: 31, marginRight: "90px", borderRadius: "20px", border: '1px solid #fff', backgroundColor: 'transparent' }}
+    <M.Paper
+      sx={{
+        p: "2px 4px",
+        display: "flex",
+        alignItems: "center",
+        width: '205px',
+        height: '31px',
+        border: "1px solid #FFF",
+        borderRadius: '10px',
+        backgroundColor: "transparent",
+      }}
     >
-      <InputBase
-        sx={{ ml: 1, flex: 1, color: "white" }}
+      <M.InputBase
+        sx={{ ml: 1, flex: 1, color: "#FFF" }}
         placeholder="Buscar"
-        value={text}
-        onChange={(search) => setText(search)}
+        type="search"
+        value={value}
+        onChange={onChange}
       />
-      <IconButton type="button" sx={{ p: '10px', color: "white" }} aria-label="search">
+
+      <M.IconButton
+        type="button"
+        sx={{ p: "10px", color: "#FFF", padding: '0' }}
+        aria-label="search"
+        onClick={action}
+      >
         <SearchIcon />
-      </IconButton>
-    </Paper>
+      </M.IconButton>
+    </M.Paper>
   );
-}
+};
+
+export default SearchInput;

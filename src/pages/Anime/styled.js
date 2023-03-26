@@ -24,7 +24,7 @@ display: none;
 `
 export const Content = styled.div`
 display: flex;
-@media screen and (min-width: 360px) and (max-width: 560px) {
+@media screen and (min-width: 360px) and (max-width: 700px) {
 display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -35,7 +35,7 @@ export const ContentCard = styled.div`
 margin-left: 83px;
 width: 250px;
 @media screen and (min-width: 360px) and (max-width: 560px) {
-    margin-left: 23px;
+margin-left: 23px;
 }
 `
 export const Card = styled.img`
@@ -74,6 +74,6 @@ margin-bottom: 10px;
 
 `
 export const Text = styled.p`
-margin-right: 20px;
+margin-right: 65px;
 font-size: clamp(1.75em, 1em + 3vw, 2,5em);
 `

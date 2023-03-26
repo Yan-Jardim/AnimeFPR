@@ -1,17 +1,22 @@
 import React from 'react'
 import * as S from "./styled";
-import Search from "../Search"
+import SearchInput from "../Search"
 
-const banner = () => {
+const banner = ({ text, setText }) => {
 
     const Back = () => {
         window.location.href = "/";
     };
+
+
     return (
         <S.container>
             <S.FprSoon src="/logo.png" alt="Logo" onClick={Back} />
 
-            <Search />
+            <SearchInput
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+            />
         </S.container>
     )
 }

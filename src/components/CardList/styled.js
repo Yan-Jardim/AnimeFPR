@@ -31,3 +31,7 @@ justify-items: center;
 padding: 30px;
 background-color: red;
 `
+export const Pagination = styled.div`
+display: flex;
+justify-content: flex-end;
+`
