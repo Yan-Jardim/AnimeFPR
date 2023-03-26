@@ -42,25 +42,25 @@ cd FPR-Anime
 
 <div align="center">
   <p>Home</p>
-<img src="./Home_Projeto.png" width="700px" />
+<img src="./public/Home_Projeto.png" width="700px" />
 </div>
 <br/>
 
 <div align="center">
   <p>Drawer</p>
-<img src="./Drawer.png" width="700px" />
+<img src="./public/Drawer.png" width="700px" />
 </div>
 <br/>
 
 <div align="center">
   <p>Page Anime</p>
-<img src="./PageAnime.png" width="700px" />
+<img src="./public/PageAnime.png" width="700px" />
 </div>
 <br/>
 
 <div align="center">
   <p>Page Categorias</p>
-<img src="./pageCategorias.png" width="700px" />
+<img src="./public/pageCategorias.png" width="700px" />
 </div>
 <br/>
 
