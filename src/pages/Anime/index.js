@@ -3,7 +3,7 @@ import * as S from "./styled";
 import axios from "axios";
 import Head from "../../components/Head"
 import Modal from '../../components/Modal';
-import Banner from '../../components/Banner';
+import Banner from './components/banner';
 import Footer from "../../components/Footer";
 import StarIcon from '@mui/icons-material/Star';
 import TemporaryDrawer from "../../components/Drawer";
@@ -53,7 +53,7 @@ const anime = () => {
                 </S.Drawer>
 
                 <S.Application>
-                    <Banner />
+                    <Banner info={response} />
                     <S.BannerImg src={response?.attributes?.coverImage?.large} />
                     <S.Content>
                         <S.ContentCard>
@@ -80,7 +80,6 @@ const anime = () => {
                             </S.Text>
                         </S.ContentText>
                     </S.Content>
-
                     {
                         modalIsOpen &&
                         <Modal handleClose={() => setModalIsOpen(false)} CurrentTrailer={currentTrailer} />

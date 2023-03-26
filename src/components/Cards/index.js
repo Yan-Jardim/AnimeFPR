@@ -21,23 +21,20 @@ export default function MediaCard({ info }) {
         <S.Popular>
           <FavoriteIcon
             sx={{ verticalAlign: 'middle', color: "red" }} />
-          #{info?.attributes?.popularityRank}
-          Mais Popular
+          # {info?.attributes?.popularityRank} Mais Popular
         </S.Popular>
 
         <S.Classification>
           <StarIcon
             sx={{ verticalAlign: 'middle', color: "yellow" }} />
-          #{info?.attributes?.ratingRank} Melhor Classificado
+          # {info?.attributes?.ratingRank} Melhor Classificado
         </S.Classification>
 
         <S.Description>{info?.attributes?.description}</S.Description>
       </S.TooltipContent>
     }
       placement="bottom"
-      
     >
-
       <Card onClick={() => { router.push(`/Anime?id=${info.id}`) }}
         sx={{ width: "225px", cursor: "pointer", borderRadius: 0 }}   >
         <CardMedia

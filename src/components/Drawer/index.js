@@ -24,11 +24,6 @@ export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     left: false,
   });
-  const items = [
-    { idGames: 1, textGames: 'Games of the Week', },
-
-  ];
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;

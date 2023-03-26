@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import * as S from "./styled";
 import axios from "axios";
 import Cards from "../../components/Cards"
-import { grid } from "@mui/system";
 
 const CardList = (props) => {
     const { title, subtitle, icon, sort, categoryName, limit } = props;
@@ -33,9 +32,6 @@ const CardList = (props) => {
                 console.log(error.toJSON());
             });
     }, []);
-
-    console.log(response, "aqui é a resposta dos cards");
-
 
     return (
         <S.List>

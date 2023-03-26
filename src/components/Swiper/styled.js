@@ -6,7 +6,9 @@ cursor: pointer;
 .swiper {
   width: 1200px;
   height: 100%;
-  
+  @media screen and (min-width: 767px) and (max-width: 1077px) {
+  width: 700px;
+  }
 }
 .swiper-slide {
   text-align: center;
@@ -15,12 +17,18 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (min-width: 767px) and (max-width: 1077px) {
+  width: 700px;
+  }
 }
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.swiper-pagination-bullet-active {
+     background-color: var(--color-orange) !important;
 }
 `
 export const Img = styled.img`

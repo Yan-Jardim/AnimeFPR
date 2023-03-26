@@ -32,7 +32,7 @@ export default function Home() {
               </S.Soon>
 
               <S.Title>
-                <Typography variant="h2">O <S.ColorOrange>Maior</S.ColorOrange> Catálogo de<br /><S.ColorGreen>Anime</S.ColorGreen> do Mundo</Typography>
+                <S.StyledTypography variant="h2">O <S.ColorOrange>Maior</S.ColorOrange> Catálogo de<br /><S.ColorGreen>Anime</S.ColorGreen> do Mundo</S.StyledTypography>
               </S.Title>
 
               <S.Search>
@@ -45,11 +45,13 @@ export default function Home() {
           <S.Card>
             <CardList title="Animes" subtitle="Mais populares" icon={<StarBorderIcon sx={{ verticalAlign: 'middle' }} />} sort="user_count" />
           </S.Card>
-
-          <Swiper />
+          
+          <S.Sliper>
+            <Swiper />
+          </S.Sliper>
 
           <S.Card>
-            <CardList title="Animes" subtitle="Mais bem classificados" icon={<ThumbUpOffAltIcon sx={{ verticalAlign: 'middle'}} />} sort="average_rating" />
+            <CardList title="Animes" subtitle="Mais bem classificados" icon={<ThumbUpOffAltIcon sx={{ verticalAlign: 'middle' }} />} sort="average_rating" />
           </S.Card>
         </S.Application>
 

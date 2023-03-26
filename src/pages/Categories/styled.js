@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: center;
 max-width: 100vw;
 overflow-x: hidden;
 `
@@ -23,4 +22,9 @@ height: 408px;
 export const Content = styled.div`
 display: flex;
 justify-content: center;
+@media screen and (min-width: 360px) and (max-width: 560px)  {
+display:flex;
+flex-direction: column;
+align-items: flex-start;
+}
 `

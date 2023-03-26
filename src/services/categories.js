@@ -2,10 +2,10 @@ import axios from "axios";
 
 const getCategories = async (limit = 10) => {
 
-    let url =  `https://kitsu.io/api/edge/categories`;
+    let url = `https://kitsu.io/api/edge/categories`;
 
     if (limit) {
-        url += `?page[limit]=${limit}`
+        url += `?page[limit]=${limit}&sort=-total_media_count`
     }
 
     const response = await axios.get(url);
@@ -13,7 +13,6 @@ const getCategories = async (limit = 10) => {
     return response.data.data;
 }
 
-export{ 
+export {
     getCategories
 }
-

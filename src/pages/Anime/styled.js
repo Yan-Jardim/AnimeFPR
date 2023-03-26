@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: center;
 max-width: 100vw;
 overflow-x: hidden;
 `
@@ -19,9 +18,18 @@ margin-bottom: 150px;
 export const BannerImg = styled.img`
 width: 100%;
 height: 408px;
+@media screen and (min-width: 360px) and (max-width: 560px) {
+display: none;
+}
 `
 export const Content = styled.div`
 display: flex;
+@media screen and (min-width: 360px) and (max-width: 560px) {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 150px;
+}
 `
 export const ContentCard = styled.div`
 margin-left: 83px;
@@ -59,9 +67,15 @@ export const ContentText = styled.div`
 margin: 13px 0 0 29px;
 `
 export const Title = styled.h1`
-
+@media screen and (min-width: 360px) and (max-width: 560px) {
+margin-left: 50px;
+}
 `
 export const Text = styled.p`
 margin-top: 20px;
 width: 700px;
+@media screen and (min-width: 360px) and (max-width: 560px) {
+width: 280px;
+margin-left: 50px;
+}
 `
